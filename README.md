@@ -1,34 +1,185 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Modern Portfolio Website
+
+A professional portfolio website built with Next.js, TypeScript, Tailwind CSS, and Framer Motion.
+
+## Features
+
+- Responsive design that works on all devices
+- Dark/light mode with system preference detection
+- Smooth animations and transitions
+- Interactive sections for showcasing skills and projects
+- Contact form with validation
+- SEO optimized
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 14.6.0 or newer
+- npm or yarn
+
+### Installation
+
+1. Clone the repository
+```bash
+git clone https://github.com/yourusername/portfolio-website.git
+cd portfolio-website
+```
+
+2. Install dependencies
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Run the development server
 ```bash
 npm run dev
 # or
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Deployment
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### Deploying to Netlify
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+#### Method 1: Netlify UI
 
-## Learn More
+1. Push your code to a GitHub repository
 
-To learn more about Next.js, take a look at the following resources:
+2. Log in to Netlify and click "New site from Git"
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Select your repository
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+4. Use these build settings:
+   - Build command: `npm run build`
+   - Publish directory: `out`
 
-## Deploy on Vercel
+5. Add these environment variables if needed:
+   - `NEXT_PUBLIC_SITE_URL`: Your site's URL (e.g., https://your-portfolio.netlify.app)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+6. Click "Deploy site"
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+#### Method 2: Netlify CLI
+
+1. Install Netlify CLI
+```bash
+npm install -g netlify-cli
+```
+
+2. Build your site
+```bash
+npm run build
+```
+
+3. Deploy using Netlify CLI
+```bash
+netlify deploy
+```
+
+4. Follow the prompts to complete deployment
+
+### Deploying to Vercel
+
+#### Method 1: Vercel UI
+
+1. Push your code to a GitHub repository
+
+2. Log in to Vercel and click "New Project"
+
+3. Import your repository
+
+4. Keep the default settings (Vercel automatically detects Next.js)
+
+5. Click "Deploy"
+
+#### Method 2: Vercel CLI
+
+1. Install Vercel CLI
+```bash
+npm install -g vercel
+```
+
+2. Deploy using Vercel CLI
+```bash
+vercel
+```
+
+3. Follow the prompts to complete deployment
+
+### Deploying to GitHub Pages
+
+1. Update next.config.js to include:
+```javascript
+module.exports = {
+  output: 'export',
+  images: {
+    unoptimized: true,
+  },
+  basePath: process.env.NODE_ENV === 'production' ? '/your-repo-name' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/your-repo-name/' : '',
+}
+```
+
+2. Add these scripts to your package.json
+```json
+"scripts": {
+  "build": "next build",
+  "export": "next export",
+  "deploy": "npm run build && touch out/.nojekyll && gh-pages -d out -t true"
+}
+```
+
+3. Install gh-pages package
+```bash
+npm install --save-dev gh-pages
+```
+
+4. Deploy to GitHub Pages
+```bash
+npm run deploy
+```
+
+## Troubleshooting Deployment Issues
+
+### Common Netlify Issues
+
+1. **Build Failures**
+   - Check your build command and publish directory
+   - Ensure all dependencies are correctly installed
+   - Verify your Node.js version is compatible
+
+2. **Page Not Found Errors**
+   - Add a `_redirects` file in your public folder with:
+     ```
+     /* /index.html 200
+     ```
+
+3. **Image Loading Issues**
+   - Make sure images are properly optimized
+   - Check that domains are correctly configured in next.config.js
+
+### Common Vercel Issues
+
+1. **Build Failures**
+   - Check the build logs for specific errors
+   - Ensure all environment variables are correctly set
+   - Verify your project structure matches Next.js requirements
+
+2. **API Routes Not Working**
+   - Make sure your API routes are properly configured
+   - Check for any serverless function limitations
+
+## Customization
+
+- Update the personal information in the components
+- Replace the avatar image in the public folder
+- Modify the color scheme in tailwind.config.js
+- Add your own projects to the Portfolio component
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.

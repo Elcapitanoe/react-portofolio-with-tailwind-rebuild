@@ -37,7 +37,7 @@ const About = () => {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            I'm a passionate developer with a keen eye for design and a love for creating seamless user experiences.
+            I&apos;m a passionate developer with a keen eye for design and a love for creating seamless user experiences.
           </motion.p>
         </div>
 
@@ -51,10 +51,10 @@ const About = () => {
               My Journey
             </h3>
             <p className="text-secondary-600 dark:text-secondary-300 mb-6">
-              With over 5 years of experience in web development, I've worked with a diverse range of clients from startups to established businesses. My approach combines technical expertise with creative problem-solving to deliver solutions that not only work flawlessly but also look stunning.
+              With over 5 years of experience in web development, I&apos;ve worked with a diverse range of clients from startups to established businesses. My approach combines technical expertise with creative problem-solving to deliver solutions that not only work flawlessly but also look stunning.
             </p>
             <p className="text-secondary-600 dark:text-secondary-300 mb-8">
-              I specialize in building modern web applications using React, Next.js, and Node.js, with a focus on performance, accessibility, and user experience. When I'm not coding, you'll find me exploring new design trends, contributing to open-source projects, or hiking in the mountains.
+              I specialize in building modern web applications using React, Next.js, and Node.js, with a focus on performance, accessibility, and user experience. When I&apos;m not coding, you&apos;ll find me exploring new design trends, contributing to open-source projects, or hiking in the mountains.
             </p>
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
