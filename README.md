@@ -22,8 +22,8 @@ A professional portfolio website built with Next.js, TypeScript, Tailwind CSS, a
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/portfolio-website.git
-cd portfolio-website
+git clone https://github.com/Elcapitanoe/react-portofolio-with-tailwind-rebuild.git
+cd react-portofolio-with-tailwind-rebuild
 ```
 
 2. Install dependencies
@@ -59,7 +59,7 @@ yarn dev
    - Publish directory: `out`
 
 5. Add these environment variables if needed:
-   - `NEXT_PUBLIC_SITE_URL`: Your site's URL (e.g., https://your-portfolio.netlify.app)
+   - `NEXT_PUBLIC_SITE_URL`: Your site's URL (e.g., https://portofolio.netlify.app)
 
 6. Click "Deploy site"
 
@@ -119,8 +119,8 @@ module.exports = {
   images: {
     unoptimized: true,
   },
-  basePath: process.env.NODE_ENV === 'production' ? '/your-repo-name' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/your-repo-name/' : '',
+  basePath: process.env.NODE_ENV === 'production' ? '/react-portofolio-with-tailwind-rebuild' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/react-portofolio-with-tailwind-rebuild/' : '',
 }
 ```
 
